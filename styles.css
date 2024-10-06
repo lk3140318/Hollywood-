@@ -1,0 +1,5 @@
+.anime-img {
+    width: 100%;   /* Set the width to 100% of the container */
+    height: auto;  /* Automatically adjust the height to maintain the aspect ratio */
+    display: block; /* Removes any extra spacing below the image */
+}
