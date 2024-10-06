@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Mod List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .mod-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .anime-img {
+            width: 100%;   /* Makes the image responsive */
+            height: auto;  /* Maintains aspect ratio */
+            display: block; /* Removes spacing below the image */
+        }
+
+        .mod-card h3 {
+            font-size: 18px;
+            margin: 15px 10px;
+        }
+
+        .mod-card p {
+            padding: 0 10px;
+            color: #666;
+        }
+
+        .mod-card a {
+            display: block;
+            text-align: center;
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .mod-card a:hover {
+            background-color: #218838;
+        }
+
+        .mod-card:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Responsive Mod List</h1>
+        <p>Find and download the best mods.</p>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <!-- Mod Item 1 -->
+            <div class="mod-card">
+                <img src="https://via.placeholder.com/300x200" alt="Mod Thumbnail" class="anime-img">
+                <h3>Mod Name 1</h3>
+                <p>Brief description of Mod 1. Get enhanced features for your game.</p>
+                <a href="#">Download Mod</a>
+            </div>
+            
+            <!-- Mod Item 2 -->
+            <div class="mod-card">
+                <img src="https://via.placeholder.com/300x200" alt="Mod Thumbnail" class="anime-img">
+                <h3>Mod Name 2</h3>
+                <p>Brief description of Mod 2. Enhance your gameplay experience.</p>
+                <a href="#">Download Mod</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 ModList. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
