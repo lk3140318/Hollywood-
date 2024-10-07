@@ -19,6 +19,33 @@
             text-align: center;
         }
 
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .search-container input {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .search-container button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #218838;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -41,9 +68,9 @@
         }
 
         .anime-img {
-            width: 100%;   /* Makes the image responsive */
-            height: auto;  /* Maintains aspect ratio */
-            display: block; /* Removes spacing below the image */
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .mod-card h3 {
@@ -82,7 +109,49 @@
             color: white;
             margin-top: 20px;
         }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
     </style>
+    <script>
+        function startCountdown(link) {
+            let countdown = 20; // 20 seconds countdown
+            const button = document.getElementById('download-button');
+            button.textContent = `Download Mod (${countdown})`;
+            const interval = setInterval(() => {
+                countdown--;
+                button.textContent = `Download Mod (${countdown})`;
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    window.location.href = link; // Redirect after countdown
+                }
+            }, 1000);
+        }
+
+        function searchMods() {
+            const input = document.getElementById('search-input').value.toLowerCase();
+            const cards = document.querySelectorAll('.mod-card');
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                if (title.includes(input) || description.includes(input)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 
@@ -91,6 +160,13 @@
         <p>Find and download the best mods.</p>
     </header>
 
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search for mods..." oninput="searchMods()">
+        <a href="https://t.me/yourtelegramlink" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Telegram_logo.svg" alt="Telegram Icon" style="width: 30px; height: 30px;">
+        </a>
+    </div>
+
     <div class="container">
         <div class="grid">
             <!-- Mod Item 1 -->
@@ -98,7 +174,7 @@
                 <img src="https://github.com/user-attachments/assets/783351dd-e79c-4736-85fb-bbe1ba56f119/300x200" alt="Mod Thumbnail" class="anime-img">
                 <h3>Mod Name 1</h3>
                 <p>Brief description of Mod 1. Get enhanced features for your game.</p>
-                <a href="#">Download Mod</a>
+                <a id="download-button" href="#" onclick="startCountdown('https://example.com/mod1')">Download Mod</a>
             </div>
             
             <!-- Mod Item 2 -->
@@ -106,13 +182,19 @@
                 <img src="https://github.com/user-attachments/assets/783351dd-e79c-4736-85fb-bbe1ba56f119" alt="Mod Thumbnail" class="anime-img">
                 <h3>Mod Name 2</h3>
                 <p>Brief description of Mod 2. Enhance your gameplay experience.</p>
-                <a href="#">Download Mod</a>
+                <a id="download-button" href="#" onclick="startCountdown('https://example.com/mod2')">Download Mod</a>
             </div>
         </div>
     </div>
 
     <footer>
         <p>© 2024 ModList. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://t.me/yourtelegramlink" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Telegram_logo.svg" alt="Telegram Icon">
+            </a>
+            <!-- Add more social media icons here -->
+        </div>
     </footer>
 
 </body>
