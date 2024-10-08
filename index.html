@@ -184,7 +184,7 @@
             const input = document.getElementById('search-input').value.toLowerCase();
             const cards = document.querySelectorAll('.mod-card');
             cards.forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
+                const title = card.querySelector('h2').textContent.toLowerCase();
                 const description = card.querySelector('p').textContent.toLowerCase();
                 if (title.includes(input) || description.includes(input)) {
                     card.style.display = 'block';
@@ -278,7 +278,7 @@
                     <button class="quality-button" onclick="startCountdown(this, 'https://gplinks.co/MZT5Z6s', '720p')">720p</button>
                     <button class="quality-button" onclick="startCountdown(this, 'https://gplinks.co/ftpPwSeK', '1080p')">1080p</button>
                 </div>
-        </div>
+          </div>
 
         <!-- Mod Item2 -->
             <div class="mod-card">
