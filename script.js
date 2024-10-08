@@ -1,51 +1,9 @@
-package com.example.demo.model;
+package com.example.demo.repository;
 
-import javax.persistence.*;
+import com.example.demo.model.ModPost;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-@Entity
-@Table(name = "mod_posts")
-public class ModPost {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String title;
-    private String description;
-    private int viewCount;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getViewCount() {
-        return viewCount;
-    }
-
-    public void setViewCount(int viewCount) {
-        this.viewCount = viewCount;
-    }
-
-    public void incrementViewCount() {
-        this.viewCount++;
-    }
+@Repository
+public interface ModPostRepository extends JpaRepository<ModPost, Long> {
 }
