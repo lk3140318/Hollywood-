@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Mod List</title>
+    <title>Responsive Mod List with Ads</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,8 +33,17 @@
             margin-right: 10px;
         }
 
-        .search-container a {
+        .search-container button {
             padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #218838;
         }
 
         .container {
@@ -83,6 +92,7 @@
             text-decoration: none;
             margin: 10px;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         .mod-card a:hover {
@@ -113,12 +123,26 @@
             height: 30px;
             cursor: pointer;
         }
+
+        .ad-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .ad-placeholder {
+            background-color: #ddd;
+            padding: 10px;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
     </style>
+
     <script>
-        // Countdown function that updates the clicked button
         function startCountdown(button, link) {
             let countdown = 20; // 20 seconds countdown
-            button.textContent = `Download Mod (${countdown})`; // Update button text
+            button.textContent = `Download Mod (${countdown})`;
             const interval = setInterval(() => {
                 countdown--;
                 button.textContent = `Download Mod (${countdown})`;
@@ -129,7 +153,6 @@
             }, 1000);
         }
 
-        // Search function for filtering mods
         function searchMods() {
             const input = document.getElementById('search-input').value.toLowerCase();
             const cards = document.querySelectorAll('.mod-card');
@@ -143,12 +166,24 @@
                 }
             });
         }
+
+        function changeButtonColor(button) {
+            button.style.backgroundColor = '#ff5722'; // Change to a different color on click
+        }
     </script>
 </head>
 <body>
 
+    <!-- Ad Banner Above Header -->
+    <div class="ad-container">
+        <!-- AdSense or custom ad code goes here -->
+        <div class="ad-placeholder">
+            Place your ad code here (728x90)
+        </div>
+    </div>
+
     <header>
-        <h1>Responsive Mod List</h1>
+        <h1>Responsive Mod List with Ads</h1>
         <p>Find and download the best mods.</p>
     </header>
 
@@ -166,25 +201,51 @@
                 <img src="https://github.com/user-attachments/assets/00668163-4f3f-438a-818e-f8e938dbfdb6" alt="Mod Thumbnail" class="anime-img">
                 <h3>Dirty Cops (2024) Porn Sex Movies Download</h3>
                 <p>Description for Dirty Cops mod.</p>
-                <a href="#" onclick="startCountdown(this, 'https://maxboxshare.com/s/pFFvmUFY8f81pygpv4QNlWRa')">Terabox</a>
+                <a href="#" onclick="startCountdown(this, 'https://maxboxshare.com/s/pFFvmUFY8f81pygpv4QNlWRa'); changeButtonColor(this)">Terabox</a>
             </div>
-            
+
             <!-- Mod Item 2 -->
             <div class="mod-card">
                 <img src="https://github.com/user-attachments/assets/16f3a5ad-f31f-4212-9f98-be0fc469f483" alt="Mod Thumbnail" class="anime-img">
                 <h3>Love Hotel Porn Adult Movies</h3>
                 <p>Description for Love Hotel mod.</p>
-                <a href="#" onclick="startCountdown(this, 'https://maxboxshare.com/s/AQRJ5uiYju3W34ChnlULlv5e')">Terabox</a>
+                <a href="#" onclick="startCountdown(this, 'https://maxboxshare.com/s/AQRJ5uiYju3W34ChnlULlv5e'); changeButtonColor(this)">Terabox</a>
+            </div>
+        </div>
+
+        <!-- Ad between Mod Cards -->
+        <div class="ad-container">
+            <!-- AdSense or custom ad code goes here -->
+            <div class="ad-placeholder">
+                Place your ad code here (300x250)
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- Mod Item 3 -->
+            <div class="mod-card">
+                <img src="https://github.com/user-attachments/assets/9da71cf3-4db3-4f95-8dcb-f2355d4dd22e" alt="Mod Thumbnail" class="anime-img">
+                <h3>Hotel Porn Episode 2</h3>
+                <p>Description for Episode 2 mod.</p>
+                <a href="#" onclick="startCountdown(this, 'https://maxboxshare.com/s/AQRJ5uiYju3W34ChnlULlv5e'); changeButtonColor(this)">Terabox</a>
             </div>
         </div>
     </div>
 
+    <!-- Footer Ad -->
     <footer>
-        <p>© 2024 ModList. All rights reserved.</p>
+        <div class="ad-container">
+            <!-- AdSense or custom ad code goes here -->
+            <div class="ad-placeholder">
+                Place your ad code here (728x90)
+            </div>
+        </div>
+        <p>&copy; 2024 Mod List. All rights reserved.</p>
         <div class="social-icons">
-            <a href="https://t.me/yourtelegramlink" target="_blank" rel="noopener noreferrer">
+            <a href="https://t.me/yourtelegramlink" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Telegram_logo.svg" alt="Telegram Icon">
             </a>
+            <!-- Add more social media icons here -->
         </div>
     </footer>
 
