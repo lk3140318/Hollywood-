@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Mod List with Ads</title>
+    <title>Responsive Mod List with Ads and Quality Options</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -137,15 +137,42 @@
             border: 1px solid #ccc;
             border-radius: 10px;
         }
+
+        .quality-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin: 10px 0;
+        }
+
+        .quality-button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .quality-button:hover {
+            background-color: #218838;
+        }
     </style>
 
     <script>
-        function startCountdown(button, link) {
-            let countdown = 20; // 20 seconds countdown
-            button.textContent = `Download Mod (${countdown})`;
+        function startCountdown(button, link, quality) {
+            let countdown;
+            if (quality === '480p') {
+                countdown = 10; // 10 seconds countdown for 480p
+            } else if (quality === '720p') {
+                countdown = 20; // 20 seconds countdown for 720p
+            } else if (quality === '1080p') {
+                countdown = 30; // 30 seconds countdown for 1080p
+            }
+
+            button.textContent = `${quality} Download (${countdown})`;
             const interval = setInterval(() => {
                 countdown--;
-                button.textContent = `Download Mod (${countdown})`;
+                button.textContent = `${quality} Download (${countdown})`;
                 if (countdown <= 0) {
                     clearInterval(interval);
                     window.location.href = link; // Redirect after countdown
@@ -166,10 +193,6 @@
                 }
             });
         }
-
-        function changeButtonColor(button) {
-            button.style.backgroundColor = '#ff5722'; // Change to a different color on click
-        }
     </script>
 </head>
 <body>
@@ -183,8 +206,8 @@
     </div>
 
     <header>
-        <h1>Responsive Mod List with Ads</h1>
-        <p>Find and download the best mods.</p>
+        <h1>Responsive Mod List with Quality Options</h1>
+        <p>Find and download the best mods in your preferred quality.</p>
     </header>
 
     <div class="search-container">
@@ -201,7 +224,11 @@
                 <img src="https://github.com/user-attachments/assets/00668163-4f3f-438a-818e-f8e938dbfdb6" alt="Mod Thumbnail" class="anime-img">
                 <h3>Dirty Cops (2024) Porn Sex Movies Download</h3>
                 <p>Description for Dirty Cops mod.</p>
-                <a href="#" onclick="startCountdown(this, 'https://maxboxshare.com/s/pFFvmUFY8f81pygpv4QNlWRa'); changeButtonColor(this)">Terabox</a>
+                <div class="quality-buttons">
+                    <button class="quality-button" onclick="startCountdown(this, 'https://maxboxshare.com/s/pFFvmUFY8f81pygpv4QNlWRa', '480p')">480p</button>
+                    <button class="quality-button" onclick="startCountdown(this, 'https://maxboxshare.com/s/pFFvmUFY8f81pygpv4QNlWRa', '720p')">720p</button>
+                    <button class="quality-button" onclick="startCountdown(this, 'https://maxboxshare.com/s/pFFvmUFY8f81pygpv4QNlWRa', '1080p')">1080p</button>
+                </div>
             </div>
 
             <!-- Mod Item 2 -->
@@ -209,7 +236,11 @@
                 <img src="https://github.com/user-attachments/assets/16f3a5ad-f31f-4212-9f98-be0fc469f483" alt="Mod Thumbnail" class="anime-img">
                 <h3>Love Hotel Porn Adult Movies</h3>
                 <p>Description for Love Hotel mod.</p>
-                <a href="#" onclick="startCountdown(this, 'https://maxboxshare.com/s/AQRJ5uiYju3W34ChnlULlv5e'); changeButtonColor(this)">Terabox</a>
+                <div class="quality-buttons">
+                    <button class="quality-button" onclick="startCountdown(this, 'https://maxboxshare.com/s/AQRJ5uiYju3W34ChnlULlv5e', '480p')">480p</button>
+                    <button class="quality-button" onclick="startCountdown(this, 'https://maxboxshare.com/s/AQRJ5uiYju3W34ChnlULlv5e', '720p')">720p</button>
+                    <button class="quality-button" onclick="startCountdown(this, 'https://maxboxshare.com/s/AQRJ5uiYju3W34ChnlULlv5e', '1080p')">1080p</button>
+                </div>
             </div>
         </div>
 
@@ -220,18 +251,11 @@
                 Place your ad code here (300x250)
             </div>
         </div>
-
-        <div class="grid">
-            <!-- Mod Item 3 -->
-            <div class="mod-card">
-                <mp4 src="https://github.com/user-attachments/assets/539d68d4-56fd-499d-ba7a-4600ff0a35f8" alt="Mod Thumbnail" class="anime-mp4">
-                <h3>Hotel Porn Episode 2</h3>
-                <p>Description for Episode 2 mod.</p>
-                <a href="#" onclick="startCountdown(this, 'https://maxboxshare.com/s/AQRJ5uiYju3W34ChnlULlv5e'); changeButtonColor(this)">Terabox</a>
-            </div>
-        </div>
     </div>
 
+    <!-- Footer Ad -->
+    <footer>
+        <div class="ad
     <!-- Footer Ad -->
     <footer>
         <div class="ad-container">
